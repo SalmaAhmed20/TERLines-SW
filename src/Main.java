@@ -22,6 +22,27 @@ public class Main {
         DatatypeProperty longitude = model.createDatatypeProperty(baseUri+"longitude");
         longitude.addDomain(City);
         longitude.addRange(XSD.xfloat);
+        //---------Stops Class---------
+        OntClass Stops = model.createClass(baseUri+"Stops" );
+        //----- Data Property of Stops ---
+        DatatypeProperty stopId = model.createDatatypeProperty(baseUri+"stopId");
+        cityName.addDomain(Stops);
+        cityName.addRange(XSD.xstring);
+        DatatypeProperty stopsName = model.createDatatypeProperty(baseUri+"stopsName");
+        cityName.addDomain(Stops);
+        cityName.addRange(XSD.xstring);
+        DatatypeProperty stopsLat = model.createDatatypeProperty(baseUri+" stopsLat");
+        latitude.addDomain(Stops);
+        latitude.addRange(XSD.xfloat);
+        DatatypeProperty stopsLong = model.createDatatypeProperty(baseUri+"stopsLong");
+        longitude.addDomain(Stops);
+        longitude.addRange(XSD.xfloat);
+        DatatypeProperty locationType = model.createDatatypeProperty(baseUri+"locationType");
+        longitude.addDomain(Stops);
+        longitude.addRange(XSD.xfloat);
+        DatatypeProperty parentStation = model.createDatatypeProperty(baseUri+"parentStation");
+        longitude.addDomain(Stops);
+        longitude.addRange(XSD.xstring);
         //for write on owl file
         FileWriter writer = new FileWriter("TERLines.owl");
         model.write(writer);
