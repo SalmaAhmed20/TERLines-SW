@@ -12,7 +12,7 @@ public class Main {
         OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM );
         //---------City Class---------
         OntClass City = model.createClass(baseUri+"City" );
-        //----- Data Property of city
+        //----- Data Property of city ---
         DatatypeProperty cityName = model.createDatatypeProperty(baseUri+"CityName");
         cityName.addDomain(City);
         cityName.addRange(XSD.xstring);
