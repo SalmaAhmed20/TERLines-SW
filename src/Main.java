@@ -75,7 +75,7 @@ public class Main {
                 for (int j = i + 1; j < stops.size(); j++) {
                     if (stops.get(j)[0].contains("StopPoint")) {
                         var point = StopPoints.createIndividual
-                                (baseUri + (stops.get(j)[0].substring(0, stops.get(j)[0].lastIndexOf(":"))  + stops.get(j)[1]).replace(" ",""));
+                                (baseUri + (stops.get(j)[0].substring(0, stops.get(j)[0].lastIndexOf(":")) +"_" + stops.get(j)[1]).replace(" ",""));
                         point.addProperty(stopId, stops.get(j)[0].substring(stops.get(j)[0].lastIndexOf(":") + 1));
                         point.addProperty(stopsName, stops.get(j)[1]);
                         if (stops.get(i)[2].equals("")) {
