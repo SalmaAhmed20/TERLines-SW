@@ -26,23 +26,23 @@ public class Main {
         OntClass Stops = model.createClass(baseUri+"Stops" );
         //----- Data Property of Stops ---
         DatatypeProperty stopId = model.createDatatypeProperty(baseUri+"stopId");
-        cityName.addDomain(Stops);
-        cityName.addRange(XSD.xstring);
+        stopId.addDomain(Stops);
+        stopId.addRange(XSD.xstring);
         DatatypeProperty stopsName = model.createDatatypeProperty(baseUri+"stopsName");
-        cityName.addDomain(Stops);
-        cityName.addRange(XSD.xstring);
-        DatatypeProperty stopsLat = model.createDatatypeProperty(baseUri+" stopsLat");
-        latitude.addDomain(Stops);
-        latitude.addRange(XSD.xfloat);
+        stopsName.addDomain(Stops);
+        stopsName.addRange(XSD.xstring);
+        DatatypeProperty stopsLat = model.createDatatypeProperty(baseUri+"stopsLat");
+        stopsLat.addDomain(Stops);
+        stopsLat.addRange(XSD.xfloat);
         DatatypeProperty stopsLong = model.createDatatypeProperty(baseUri+"stopsLong");
-        longitude.addDomain(Stops);
-        longitude.addRange(XSD.xfloat);
+        stopsLong.addDomain(Stops);
+        stopsLong.addRange(XSD.xfloat);
         DatatypeProperty locationType = model.createDatatypeProperty(baseUri+"locationType");
-        longitude.addDomain(Stops);
-        longitude.addRange(XSD.xfloat);
+        locationType.addDomain(Stops);
+        locationType.addRange(XSD.xfloat);
         DatatypeProperty parentStation = model.createDatatypeProperty(baseUri+"parentStation");
-        longitude.addDomain(Stops);
-        longitude.addRange(XSD.xstring);
+        parentStation.addDomain(Stops);
+        parentStation.addRange(XSD.xstring);
         //for write on owl file
         FileWriter writer = new FileWriter("TERLines.owl");
         model.write(writer);
