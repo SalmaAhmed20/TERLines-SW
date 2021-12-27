@@ -4,4 +4,16 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
   <owl:Class rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#City"/>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#CityName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#City"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Latitude">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#City"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#longitude">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#City"/>
+  </owl:DatatypeProperty>
 </rdf:RDF>
