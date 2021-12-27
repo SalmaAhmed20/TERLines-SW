@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
   <owl:Class rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#City"/>
   <owl:Class rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Stops"/>
-  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#CityName">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#City"/>
-  </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#stopsLong">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Stops"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#CityName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#City"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#parentStation">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -42,4 +43,284 @@
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Stops"/>
   </owl:DatatypeProperty>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Lille">
+    <j.0:longitude>3.0583</j.0:longitude>
+    <j.0:Latitude>50.6278</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Lille</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Angers">
+    <j.0:longitude>-0.554167</j.0:longitude>
+    <j.0:Latitude>47.4736</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Angers</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Perpignan">
+    <j.0:longitude>2.8956</j.0:longitude>
+    <j.0:Latitude>42.6986</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Perpignan</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Orléans">
+    <j.0:longitude>1.909</j.0:longitude>
+    <j.0:Latitude>47.9025</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Orléans</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Le_Mans">
+    <j.0:longitude>0.1984</j.0:longitude>
+    <j.0:Latitude>48.0077</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Le_Mans</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Clermont-Ferrand">
+    <j.0:longitude>3.0824</j.0:longitude>
+    <j.0:Latitude>45.7831</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Clermont-Ferrand</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Cherbourg-Octeville">
+    <j.0:longitude>-1.62</j.0:longitude>
+    <j.0:Latitude>49.63</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Cherbourg-Octeville</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Verdun">
+    <j.0:longitude>5.3876</j.0:longitude>
+    <j.0:Latitude>49.162</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Verdun</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#La_Rochelle">
+    <j.0:longitude>-1.1517</j.0:longitude>
+    <j.0:Latitude>46.1591</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/La_Rochelle</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Amiens">
+    <j.0:longitude>2.299</j.0:longitude>
+    <j.0:Latitude>49.892</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Amiens</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Rikitea">
+    <j.0:longitude>-134.969</j.0:longitude>
+    <j.0:Latitude>-23.1203</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Rikitea</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Belfort">
+    <j.0:longitude>6.85</j.0:longitude>
+    <j.0:Latitude>47.64</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Belfort</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Cannes">
+    <j.0:longitude>7.0128</j.0:longitude>
+    <j.0:Latitude>43.5513</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Cannes</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Saint-Étienne">
+    <j.0:longitude>4.3903</j.0:longitude>
+    <j.0:Latitude>45.4347</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Saint-Étienne</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Buverchy">
+    <j.0:longitude>2.9711</j.0:longitude>
+    <j.0:Latitude>49.7314</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Buverchy</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Fond-du-Curé_les_Saintes">
+    <j.0:longitude>-61.5844</j.0:longitude>
+    <j.0:Latitude>15.8639</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Fond-du-Curé_les_Saintes</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Tourcoing">
+    <j.0:longitude>3.16117</j.0:longitude>
+    <j.0:Latitude>50.7239</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Tourcoing</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Arles">
+    <j.0:longitude>4.6278</j.0:longitude>
+    <j.0:Latitude>43.6767</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Arles</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Biarritz">
+    <j.0:longitude>-1.56</j.0:longitude>
+    <j.0:Latitude>43.48</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Biarritz</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Brest_France">
+    <j.0:longitude>-4.49</j.0:longitude>
+    <j.0:Latitude>48.39</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Brest_France</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Nîmes">
+    <j.0:longitude>4.361</j.0:longitude>
+    <j.0:Latitude>43.838</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Nîmes</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Nouméa">
+    <j.0:longitude>166.458</j.0:longitude>
+    <j.0:Latitude>-22.2758</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Nouméa</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Chambéry">
+    <j.0:longitude>5.9118</j.0:longitude>
+    <j.0:Latitude>45.57</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Chambéry</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Toulouse">
+    <j.0:longitude>1.444</j.0:longitude>
+    <j.0:Latitude>43.6045</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Toulouse</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Rennes">
+    <j.0:longitude>-1.6794</j.0:longitude>
+    <j.0:Latitude>48.1147</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Rennes</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Béthune">
+    <j.0:longitude>2.6408</j.0:longitude>
+    <j.0:Latitude>50.5303</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Béthune</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Boulogne-sur-Mer">
+    <j.0:longitude>1.6147</j.0:longitude>
+    <j.0:Latitude>50.7264</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Boulogne-sur-Mer</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Beauvais">
+    <j.0:longitude>2.0952</j.0:longitude>
+    <j.0:Latitude>49.4303</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Beauvais</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Yvoire">
+    <j.0:longitude>6.32615</j.0:longitude>
+    <j.0:Latitude>46.3703</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Yvoire</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Vichy">
+    <j.0:longitude>3.4267</j.0:longitude>
+    <j.0:Latitude>46.1278</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Vichy</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Montbéliard">
+    <j.0:longitude>6.8</j.0:longitude>
+    <j.0:Latitude>47.51</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Montbéliard</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Blois">
+    <j.0:longitude>1.3281</j.0:longitude>
+    <j.0:Latitude>47.5939</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Blois</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Mâcon">
+    <j.0:longitude>4.8313</j.0:longitude>
+    <j.0:Latitude>46.3063</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Mâcon</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Laon">
+    <j.0:longitude>3.6244</j.0:longitude>
+    <j.0:Latitude>49.5639</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Laon</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Sainte-Anne_Guadeloupe">
+    <j.0:longitude>-61.3833</j.0:longitude>
+    <j.0:Latitude>16.2333</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Sainte-Anne_Guadeloupe</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Bayonne">
+    <j.0:longitude>-1.48</j.0:longitude>
+    <j.0:Latitude>43.49</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Bayonne</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Bourges">
+    <j.0:longitude>2.3964</j.0:longitude>
+    <j.0:Latitude>47.0844</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Bourges</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Mulhouse">
+    <j.0:longitude>7.34</j.0:longitude>
+    <j.0:Latitude>47.75</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Mulhouse</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Metz">
+    <j.0:longitude>6.17778</j.0:longitude>
+    <j.0:Latitude>49.1203</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Metz</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Poitiers">
+    <j.0:longitude>0.34</j.0:longitude>
+    <j.0:Latitude>46.58</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Poitiers</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Pointe-à-Pitre">
+    <j.0:longitude>-61.5331</j.0:longitude>
+    <j.0:Latitude>16.2411</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Pointe-à-Pitre</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Toulon">
+    <j.0:longitude>5.93056</j.0:longitude>
+    <j.0:Latitude>43.1258</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Toulon</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Saint-Malo">
+    <j.0:longitude>-2.0075</j.0:longitude>
+    <j.0:Latitude>48.6481</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Saint-Malo</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Nantes">
+    <j.0:longitude>-1.5528</j.0:longitude>
+    <j.0:Latitude>47.2181</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Nantes</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Limoges">
+    <j.0:longitude>1.2625</j.0:longitude>
+    <j.0:Latitude>45.8353</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Limoges</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Annecy">
+    <j.0:longitude>6.133</j.0:longitude>
+    <j.0:Latitude>45.916</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Annecy</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Gustavia_Saint_Barthélemy">
+    <j.0:longitude>-62.8506</j.0:longitude>
+    <j.0:Latitude>17.8979</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Gustavia_Saint_Barthélemy</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Dijon">
+    <j.0:longitude>5.01667</j.0:longitude>
+    <j.0:Latitude>47.3167</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Dijon</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Bordeaux">
+    <j.0:longitude>-0.58</j.0:longitude>
+    <j.0:Latitude>44.84</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Bordeaux</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Petite-Anse_les_Saintes">
+    <j.0:longitude>-61.6164</j.0:longitude>
+    <j.0:Latitude>15.855</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Petite-Anse_les_Saintes</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Tours">
+    <j.0:longitude>0.689167</j.0:longitude>
+    <j.0:Latitude>47.3936</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Tours</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Montpellier">
+    <j.0:longitude>3.8772</j.0:longitude>
+    <j.0:Latitude>43.6119</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Montpellier</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Rouen">
+    <j.0:longitude>1.08861</j.0:longitude>
+    <j.0:Latitude>49.4428</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Rouen</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Paris">
+    <j.0:longitude>2.35222</j.0:longitude>
+    <j.0:Latitude>48.8566</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Paris</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Châlons-en-Champagne">
+    <j.0:longitude>4.365</j.0:longitude>
+    <j.0:Latitude>48.9575</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Châlons-en-Champagne</j.0:CityName>
+  </j.0:City>
+  <j.0:City rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#Cayenne">
+    <j.0:longitude>-52.326</j.0:longitude>
+    <j.0:Latitude>4.9372</j.0:Latitude>
+    <j.0:CityName>http://dbpedia.org/resource/Cayenne</j.0:CityName>
+  </j.0:City>
 </rdf:RDF>

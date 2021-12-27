@@ -4,8 +4,8 @@ http://dbpedia.org/resource/La_Rochelle,46.1591,-1.1517
 http://dbpedia.org/resource/Laon,49.5639,3.6244
 http://dbpedia.org/resource/Rennes,48.1147,-1.6794
 http://dbpedia.org/resource/Rouen,49.4428,1.08861
-"http://dbpedia.org/resource/Sainte-Anne,_Guadeloupe",16.2333,-61.3833
-"http://dbpedia.org/resource/Petite-Anse,_les_Saintes",15.855,-61.6164
+http://dbpedia.org/resource/Sainte-Anne_Guadeloupe,16.2333,-61.3833
+http://dbpedia.org/resource/Petite-Anse_les_Saintes,15.855,-61.6164
 http://dbpedia.org/resource/Arles,43.6767,4.6278
 http://dbpedia.org/resource/Bayonne,43.49,-1.48
 http://dbpedia.org/resource/Beauvais,49.4303,2.0952
@@ -21,7 +21,7 @@ http://dbpedia.org/resource/Tourcoing,50.7239,3.16117
 http://dbpedia.org/resource/Tours,47.3936,0.689167
 http://dbpedia.org/resource/Yvoire,46.3703,6.32615
 http://dbpedia.org/resource/Mâcon,46.3063,4.8313
-"http://dbpedia.org/resource/Brest,_France",48.39,-4.49
+http://dbpedia.org/resource/Brest_France,48.39,-4.49
 http://dbpedia.org/resource/Cannes,43.5513,7.0128
 http://dbpedia.org/resource/Cayenne,4.9372,-52.326
 http://dbpedia.org/resource/Belfort,47.64,6.85
@@ -33,7 +33,7 @@ http://dbpedia.org/resource/Saint-Malo,48.6481,-2.0075
 http://dbpedia.org/resource/Saint-Étienne,45.4347,4.3903
 http://dbpedia.org/resource/Lille,50.6278,3.0583
 http://dbpedia.org/resource/Annecy,45.916,6.133
-"http://dbpedia.org/resource/Gustavia,_Saint_Barthélemy",17.8979,-62.8506
+http://dbpedia.org/resource/Gustavia_Saint_Barthélemy,17.8979,-62.8506
 http://dbpedia.org/resource/Paris,48.8566,2.35222
 http://dbpedia.org/resource/Angers,47.4736,-0.554167
 http://dbpedia.org/resource/Bordeaux,44.84,-0.58
@@ -49,7 +49,7 @@ http://dbpedia.org/resource/Amiens,49.892,2.299
 http://dbpedia.org/resource/Nîmes,43.838,4.361
 http://dbpedia.org/resource/Toulon,43.1258,5.93056
 http://dbpedia.org/resource/Toulouse,43.6045,1.444
-"http://dbpedia.org/resource/Fond-du-Curé,_les_Saintes",15.8639,-61.5844
+http://dbpedia.org/resource/Fond-du-Curé_les_Saintes,15.8639,-61.5844
 http://dbpedia.org/resource/Limoges,45.8353,1.2625
 http://dbpedia.org/resource/Mulhouse,47.75,7.34
 http://dbpedia.org/resource/Nantes,47.2181,-1.5528
