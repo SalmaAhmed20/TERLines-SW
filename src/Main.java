@@ -1,8 +1,6 @@
-import org.apache.jena.ontology.DatatypeProperty;
-import org.apache.jena.ontology.OntClass;
-import org.apache.jena.ontology.OntModel;
-import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.ontology.*;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.vocabulary.RDFS;
 import org.apache.jena.vocabulary.XSD;
 
 import java.io.BufferedReader;
@@ -28,8 +26,12 @@ public class Main {
         longitude.addDomain(City);
         longitude.addRange(XSD.xfloat);
 
-        //---------Stops Class---------
+        //---------Stops,StopArea,StopPoints Classes---------
         OntClass Stops = model.createClass(baseUri + "Stops");
+        OntClass StopArea = model.createClass( baseUri + "StopArea" );
+        OntClass StopPoints = model.createClass( baseUri + "StopPoints" );
+        model.add(StopArea,RDFS.subClassOf,Stops);
+        model.add(StopPoints,RDFS.subClassOf,Stops);
         //----- Data Property of Stops ---
         DatatypeProperty stopId = model.createDatatypeProperty(baseUri + "stopId");
         stopId.addDomain(Stops);
@@ -43,12 +45,10 @@ public class Main {
         DatatypeProperty stopsLong = model.createDatatypeProperty(baseUri + "stopsLong");
         stopsLong.addDomain(Stops);
         stopsLong.addRange(XSD.xfloat);
-        DatatypeProperty locationType = model.createDatatypeProperty(baseUri + "locationType");
-        locationType.addDomain(Stops);
-        locationType.addRange(XSD.xfloat);
-        DatatypeProperty parentStation = model.createDatatypeProperty(baseUri + "parentStation");
-        parentStation.addDomain(Stops);
-        parentStation.addRange(XSD.xstring);
+        //----ObjectProperty-----
+        ObjectProperty isParentStation = model.createObjectProperty( baseUri + "isParentStation" );
+        isParentStation.addDomain(StopArea);
+        isParentStation.addRange(StopPoints);
         var cities = read_csv();
         for (int i = 1; i < cities.size(); i++) {
             System.out.println(cities.get(i)[1]);
