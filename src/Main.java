@@ -57,18 +57,12 @@ public class Main {
             individual.addProperty(cityName, cities.get(i)[0]);
             model.add(individual, latitude, ResourceFactory.createTypedLiteral(cities.get(i)[1], XSDDatatype.XSDfloat));
             model.add(individual, longitude, ResourceFactory.createTypedLiteral(cities.get(i)[2], XSDDatatype.XSDfloat));
-//            individual.addProperty(longitude, cities.get(i)[2]);
         }
         var stops = readFile("Dataset/stops.txt");
-        for (int i = 1; i < stops.size();i++ ) {
-//            for (int j = 0; j < stops.get(i).length; j++) {
-//                if(!stops.get(i)[j].equals(""))
-//                    System.out.print(stops.get(i)[j]+",");
-//            }
-//            System.out.println();
+        for (int i = 1; i < stops.size(); i++) {
             if (stops.get(i)[0].contains("StopArea")) {
                 var area = StopArea.createIndividual
-                        (baseUri + stops.get(i)[0].substring(0, stops.get(i)[0].lastIndexOf(":")) + "_" + stops.get(i)[1]);
+                        (baseUri + (stops.get(i)[0].substring(0, stops.get(i)[0].lastIndexOf(":")) + "_" + stops.get(i)[1]).replace(" ",""));
                 area.addProperty(stopId, stops.get(i)[0].substring(stops.get(i)[0].lastIndexOf(":") + 1));
                 area.addProperty(stopsName, stops.get(i)[1]);
                 if (stops.get(i)[2].equals("")) {
@@ -79,10 +73,9 @@ public class Main {
                     model.add(area, stopsLong, ResourceFactory.createTypedLiteral(stops.get(i)[3], XSDDatatype.XSDfloat));
                 }
                 for (int j = i + 1; j < stops.size(); j++) {
-                    System.out.println(j);
                     if (stops.get(j)[0].contains("StopPoint")) {
                         var point = StopPoints.createIndividual
-                                (baseUri + stops.get(j)[0].substring(0, stops.get(j)[0].lastIndexOf(":")) + "_" + stops.get(j)[1]);
+                                (baseUri + (stops.get(j)[0].substring(0, stops.get(j)[0].lastIndexOf(":"))  + stops.get(j)[1]).replace(" ",""));
                         point.addProperty(stopId, stops.get(j)[0].substring(stops.get(j)[0].lastIndexOf(":") + 1));
                         point.addProperty(stopsName, stops.get(j)[1]);
                         if (stops.get(i)[2].equals("")) {
@@ -109,13 +102,13 @@ public class Main {
 
     static public Vector<String[]> readFile(String path) throws IOException {
         String line;
-        Vector<String[]> cities = new Vector<String[]>();
+        Vector<String[]> Row = new Vector<String[]>();
         String[] columns;
         BufferedReader br = new BufferedReader(new FileReader(path));
         while ((line = br.readLine()) != null) {
             columns = line.split(",");
-            cities.add(columns);
+            Row.add(columns);
         }
-        return cities;
+        return Row;
     }
 }
