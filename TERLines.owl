@@ -1,0 +1,86 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.0="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Doctor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Medicine"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2PatientMedication"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Patient">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Person"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Paper"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2HasMedicine">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Medicine"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2PatientMedication"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2TakeMedication">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2PatientMedication"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Patient"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2TreatedBy">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Doctor"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Patient"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2PatientName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Patient"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2MedicationEndDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2PatientMedication"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2MedicationStartDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2PatientMedication"/>
+  </owl:DatatypeProperty>
+  <j.0:Project2Patient rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Ahmed">
+    <j.0:Project2PatientName>Ahmed Nasr</j.0:Project2PatientName>
+    <j.0:Project2TakeMedication>
+      <j.0:Project2PatientMedication rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2AhmedAspirin">
+        <j.0:Project2MedicationEndDate>Mon Dec 27 17:05:12 EET 2021</j.0:Project2MedicationEndDate>
+        <j.0:Project2MedicationStartDate>Mon Dec 27 17:05:12 EET 2021</j.0:Project2MedicationStartDate>
+        <j.0:Project2HasMedicine>
+          <j.0:Project2Medicine rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Aspirin"/>
+        </j.0:Project2HasMedicine>
+      </j.0:Project2PatientMedication>
+    </j.0:Project2TakeMedication>
+    <j.0:Project2TakeMedication>
+      <j.0:Project2PatientMedication rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2AhmedInsulin">
+        <j.0:Project2MedicationEndDate>Mon Dec 27 17:05:12 EET 2021</j.0:Project2MedicationEndDate>
+        <j.0:Project2MedicationStartDate>Mon Dec 27 17:05:12 EET 2021</j.0:Project2MedicationStartDate>
+        <j.0:Project2HasMedicine>
+          <j.0:Project2Medicine rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Insulin"/>
+        </j.0:Project2HasMedicine>
+      </j.0:Project2PatientMedication>
+    </j.0:Project2TakeMedication>
+    <j.0:Project2TreatedBy>
+      <j.0:Project2Doctor rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Salah"/>
+    </j.0:Project2TreatedBy>
+  </j.0:Project2Patient>
+  <j.0:Project2Patient rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Nada">
+    <j.0:Project2PatientName>Nada Mohamed</j.0:Project2PatientName>
+    <j.0:Project2TakeMedication>
+      <j.0:Project2PatientMedication rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2NadaMetaformin">
+        <j.0:Project2MedicationEndDate>Mon Dec 27 17:05:12 EET 2021</j.0:Project2MedicationEndDate>
+        <j.0:Project2MedicationStartDate>Mon Dec 27 17:05:12 EET 2021</j.0:Project2MedicationStartDate>
+        <j.0:Project2HasMedicine>
+          <j.0:Project2Medicine rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Metformin"/>
+        </j.0:Project2HasMedicine>
+      </j.0:Project2PatientMedication>
+    </j.0:Project2TakeMedication>
+    <j.0:Project2TakeMedication>
+      <j.0:Project2PatientMedication rdf:about="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2NadaInsulin">
+        <j.0:Project2MedicationEndDate>Mon Dec 27 17:05:12 EET 2021</j.0:Project2MedicationEndDate>
+        <j.0:Project2MedicationStartDate>Mon Dec 27 17:05:12 EET 2021</j.0:Project2MedicationStartDate>
+        <j.0:Project2HasMedicine rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Insulin"/>
+      </j.0:Project2PatientMedication>
+    </j.0:Project2TakeMedication>
+    <j.0:Project2TreatedBy rdf:resource="http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2Salah"/>
+  </j.0:Project2Patient>
+</rdf:RDF>
