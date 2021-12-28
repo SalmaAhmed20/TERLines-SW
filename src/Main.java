@@ -54,9 +54,9 @@ public class Main {
         //---------Trips---------
         OntClass Trips = model.createClass(baseUri + "Trips");
         //----- Data Property of Trips ---
-        DatatypeProperty routeId = model.createDatatypeProperty(baseUri + "routeId");
-        routeId.addDomain(Trips);
-        routeId.addRange(XSD.xstring);
+        DatatypeProperty service_id = model.createDatatypeProperty(baseUri + "service_id");
+        service_id.addDomain(Trips);
+        service_id.addRange(XSD.xstring);
         DatatypeProperty tripId = model.createDatatypeProperty(baseUri + "tripId");
         tripId.addDomain(Trips);
         tripId.addRange(XSD.xstring);
@@ -76,9 +76,9 @@ public class Main {
         routeLongtName.addDomain(Routes);
         routeLongtName.addRange(XSD.xstring);
         //----ObjectProperty-----
-        ObjectProperty hasRoutes = model.createObjectProperty(baseUri + "hasRoutes");
-        hasRoutes.addDomain(Trips);
-        hasRoutes.addRange(Routes);
+        ObjectProperty hasRoute = model.createObjectProperty(baseUri + "hasRoute");
+        hasRoute.addDomain(Trips);
+        hasRoute.addRange(Routes);
         //----------individual of city---------
         var cities = readFile("Dataset/cities.csv");
         for (int i = 1; i < cities.size(); i++) {
@@ -92,7 +92,7 @@ public class Main {
         for (int i = 1; i < stops.size(); i++) {
             if (stops.get(i)[0].contains("StopArea")) {
                 var area = StopArea.createIndividual
-                        (baseUri + (stops.get(i)[0] + "_" + stops.get(i)[1]).replace(" ",""));
+                        (baseUri + (stops.get(i)[0] + "_" + stops.get(i)[1]).replace(" ", ""));
                 area.addProperty(stopId, stops.get(i)[0].substring(stops.get(i)[0].lastIndexOf(":") + 1));
                 area.addProperty(stopsName, stops.get(i)[1]);
                 if (stops.get(i)[2].equals("")) {
@@ -105,7 +105,7 @@ public class Main {
                 for (int j = i + 1; j < stops.size(); j++) {
                     if (stops.get(j)[0].contains("StopPoint")) {
                         var point = StopPoints.createIndividual
-                                (baseUri + (stops.get(j)[0] +"_" + stops.get(j)[1]).replace(" ",""));
+                                (baseUri + (stops.get(j)[0] + "_" + stops.get(j)[1]).replace(" ", ""));
                         point.addProperty(stopId, stops.get(j)[0].substring(stops.get(j)[0].lastIndexOf(":") + 1));
                         point.addProperty(stopsName, stops.get(j)[1]);
                         if (stops.get(i)[2].equals("")) {
@@ -121,6 +121,23 @@ public class Main {
                     }
                 }
             }
+        }
+        var routes = readFile("Dataset/routes.txt");
+        for (int i = 1; i <= routes.size() - 1; i++) {
+            var route = Routes.createIndividual(baseUri + routes.get(i)[0]);
+            route.addProperty(RouteId, routes.get(i)[0]);
+            route.addProperty(agencyId, routes.get(i)[1]);
+            route.addProperty(routeShortName, routes.get(i)[2]);
+            route.addProperty(routeLongtName, routes.get(i)[3]);
+        }
+        var trips = readFile("Dataset/trips.txt");
+        for (int i = 1; i < trips.size(); i++) {
+            var trip = Trips.createIndividual(baseUri + trips.get(i)[2].replace(" ", ""));
+            trip.addProperty(service_id, trips.get(i)[1]);
+            trip.addProperty(tripId, trips.get(i)[2]);
+//            System.out.println(trips.get(i)[0]);
+            var related = Routes.createIndividual(baseUri + trips.get(i)[0].replace(" ", ""));
+            trip.addProperty(hasRoute, related);
         }
 
 

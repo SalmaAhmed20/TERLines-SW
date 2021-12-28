@@ -1,0 +1,5 @@
+c.
+SELECT ?stopArea ?stopPoint
+WHERE {
+    ?stopArea uri:isParentStation ?stopPoint
+    }
