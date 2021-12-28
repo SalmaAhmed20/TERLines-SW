@@ -1,3 +1,30 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX uri: <http://www.semanticweb.org/20180122-20180078-20180040/ontologies/2021/11/Project2#>
+a. to get all stops with its nearest city
+SELECT ?stop ?Nearestcity
+WHERE { ?stop rdf:type uri:StopArea.
+  ?stop uri:CloserTo ?Nearestcity }
+  ------------------------------------------------------
+  to get specific stop using stop id
+     SELECT ?stop ?city
+     WHERE { ?stop rdf:type uri:StopArea.
+       ?stop uri:stopId ("OCE80142927").
+       ?stop uri:CloserTo ?city }
+   -------------------------------------------------
+   to get specific stop using individual in owl
+       SELECT  ?Nearestcity
+       WHERE {
+         uri:StopArea:OCE87543124 uri:CloserTo ?Nearestcity }
+   ------------------------------------------------------------------
+   to get specific stop using stop name
+       SELECT ?stop ?city
+        WHERE { ?stop rdf:type uri:StopArea.
+          ?stop uri:stopsName "Marseille Saint-Charles".
+          ?stop uri:CloserTo ?city }
+    -------------------------------------------------------------------
 c.
 SELECT ?stopArea ?stopPoint
 WHERE {
