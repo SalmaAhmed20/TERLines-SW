@@ -65,6 +65,10 @@ public class Main {
         DatatypeProperty tripId = model.createDatatypeProperty(baseUri + "tripId");
         tripId.addDomain(Trips);
         tripId.addRange(XSD.xstring);
+        //----ObjectProperty-----
+        ObjectProperty has_a = model.createObjectProperty(baseUri + "has_a");
+        has_a.addDomain(Trips);
+        has_a.addRange(StopPoints);
         //---------Routes---------
         OntClass Routes = model.createClass(baseUri + "Routes");
         //----- Data Property of Routes ---
