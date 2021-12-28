@@ -161,20 +161,17 @@ public class Main {
         // ------------- individual of stops times ---------------------
         var stopsTime = readFile("DataSet/stop_times.txt");
         for (int i = 1; i < stopsTime.size(); i++) {
-            var trip = Trips.createIndividual(baseUri+stopsTime.get(i)[0].replace(" ",""));
+            var trip = Trips.createIndividual(baseUri + stopsTime.get(i)[0].replace(" ", ""));
             if (stopsTime.get(i)[3].contains("Train")) {
-                var point = StopPointsByTrain.createIndividual(baseUri+stopsTime.get(i)[3].replace(" ","-"));
-                trip.addProperty(has_a,point);
-            }
-            else
-            {
+                var point = StopPointsByTrain.createIndividual(baseUri + stopsTime.get(i)[3].replace(" ", "-"));
+                trip.addProperty(has_a, point);
+            } else {
                 System.out.println(stopsTime.get(i)[0]);
-                var point = StopPointsByOther.createIndividual(baseUri+stopsTime.get(i)[3].replace(" ","-"));
-                trip.addProperty(has_a,point);
+                var point = StopPointsByOther.createIndividual(baseUri + stopsTime.get(i)[3].replace(" ", "-"));
+                trip.addProperty(has_a, point);
             }
 
         }
-
 
         //for write on owl file
         FileWriter writer = new FileWriter("TERLines.owl");

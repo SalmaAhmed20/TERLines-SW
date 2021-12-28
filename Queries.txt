@@ -25,6 +25,18 @@ WHERE { ?stop rdf:type uri:StopArea.
           ?stop uri:stopsName "Marseille Saint-Charles".
           ?stop uri:CloserTo ?city }
     -------------------------------------------------------------------
+b.
+SELECT ?train ?route ?stops
+WHERE {
+  ?x rdf:type uri:Trips.
+  ?x uri:has_a ?z.
+  ?x uri:hasRoute ?y.
+  ?y uri:routeLongtName ?route.
+  ?z rdf:type uri:StopPointsByTrain.
+  ?z uri:stopId ?train.
+  ?a uri:isParentStation ?z.
+  ?a uri:stopsName ?stops }
+  -----------------------------------------------------------
 c.
 SELECT ?stopArea ?stopPoint
 WHERE {
