@@ -90,7 +90,7 @@ public class Main {
         hasRoute.addRange(Routes);
         //----------individual of city---------
         var cities = readFile("Dataset/cities.csv");
-        var stops = readFile("Dataset/stops.txt");
+
         for (int i = 1; i < cities.size(); i++) {
             var individual = City.createIndividual(baseUri + cities.get(i)[0].substring(cities.get(i)[0].lastIndexOf('/') + 1));
             individual.addProperty(cityName, cities.get(i)[0]);
@@ -98,6 +98,7 @@ public class Main {
             model.add(individual, longitude, ResourceFactory.createTypedLiteral(cities.get(i)[2], XSDDatatype.XSDfloat));
         }
         //----------individual of stops---------
+        var stops = readFile("Dataset/stops.txt");
         for (int i = 1; i < stops.size(); i++) {
             if (stops.get(i)[0].contains("StopArea")) {
                 var area = StopArea.createIndividual(baseUri + (stops.get(i)[0]).replace(" ", ""));
@@ -139,7 +140,7 @@ public class Main {
                 }
             }
         }
-
+        // --------------------- individual of routes------------------------
         var routes = readFile("Dataset/routes.txt");
         for (int i = 1; i <= routes.size() - 1; i++) {
             var route = Routes.createIndividual(baseUri + routes.get(i)[0]);
@@ -148,14 +149,30 @@ public class Main {
             route.addProperty(routeShortName, routes.get(i)[2]);
             route.addProperty(routeLongtName, routes.get(i)[3]);
         }
+        // --------------------- individual of trips------------------------
         var trips = readFile("Dataset/trips.txt");
         for (int i = 1; i < trips.size(); i++) {
             var trip = Trips.createIndividual(baseUri + trips.get(i)[2].replace(" ", ""));
             trip.addProperty(service_id, trips.get(i)[1]);
             trip.addProperty(tripId, trips.get(i)[2]);
-//            System.out.println(trips.get(i)[0]);
             var related = Routes.createIndividual(baseUri + trips.get(i)[0].replace(" ", ""));
             trip.addProperty(hasRoute, related);
+        }
+        // ------------- individual of stops times ---------------------
+        var stopsTime = readFile("DataSet/stop_times.txt");
+        for (int i = 1; i < stopsTime.size(); i++) {
+            var trip = Trips.createIndividual(baseUri+stopsTime.get(i)[0].replace(" ",""));
+            if (stopsTime.get(i)[3].contains("Train")) {
+                var point = StopPointsByTrain.createIndividual(baseUri+stopsTime.get(i)[3].replace(" ","-"));
+                trip.addProperty(has_a,point);
+            }
+            else
+            {
+                System.out.println(stopsTime.get(i)[0]);
+                var point = StopPointsByOther.createIndividual(baseUri+stopsTime.get(i)[3].replace(" ","-"));
+                trip.addProperty(has_a,point);
+            }
+
         }
 
 
