@@ -92,9 +92,6 @@ public class Main {
             individual.addProperty(cityName, cities.get(i)[0]);
             model.add(individual, latitude, ResourceFactory.createTypedLiteral(cities.get(i)[1], XSDDatatype.XSDfloat));
             model.add(individual, longitude, ResourceFactory.createTypedLiteral(cities.get(i)[2], XSDDatatype.XSDfloat));
-            int closer=get_Closer( cities,i,stops);
-            var StopsArea=StopArea.createIndividual(baseUri  + (stops.get(closer)[0]).replace(" ",""));
-            individual.addProperty(CloserTo,StopsArea);
         }
         //----------individual of stops---------
         for (int i = 1; i < stops.size(); i++) {
@@ -102,6 +99,9 @@ public class Main {
                 var area = StopArea.createIndividual(baseUri + (stops.get(i)[0]).replace(" ",""));
                 area.addProperty(stopId, stops.get(i)[0].substring(stops.get(i)[0].lastIndexOf(":") + 1));
                 area.addProperty(stopsName, stops.get(i)[1]);
+                int closer=get_Closer( cities,i,stops);
+                var individual=City.createIndividual(baseUri + cities.get(closer)[0].substring(cities.get(closer)[0].lastIndexOf('/') + 1));
+                area.addProperty(CloserTo,individual);
                 if (stops.get(i)[2].equals("")) {
                     model.add(area, stopsLat, ResourceFactory.createTypedLiteral(stops.get(i)[3], XSDDatatype.XSDfloat));
                     model.add(area, stopsLong, ResourceFactory.createTypedLiteral(stops.get(i)[4], XSDDatatype.XSDfloat));
@@ -176,12 +176,12 @@ public class Main {
     static public int get_Closer(Vector<String[]> cities,int idx,Vector<String[]> stops) {
         double min=Double.POSITIVE_INFINITY;
         int indexStops=-1;
-            double latCity=Math.toRadians(Float.parseFloat(cities.get(idx)[1]));
-            double longCity=Math.toRadians(Float.parseFloat(cities.get(idx)[2]));
-            for (int j = 1; j < stops.size(); j++) {
-                if (stops.get(j)[0].contains("StopArea")) {
-                    double latStops = Math.toRadians(Float.parseFloat(stops.get(j)[3]));
-                    double longStops = Math.toRadians(Float.parseFloat(stops.get(j)[4]));
+
+            double latStops = Math.toRadians(Float.parseFloat(stops.get(idx)[3]));
+            double longStops = Math.toRadians(Float.parseFloat(stops.get(idx)[4]));
+            for (int j = 1; j < cities.size(); j++) {
+                    double latCity=Math.toRadians(Float.parseFloat(cities.get(j)[1]));
+                    double longCity=Math.toRadians(Float.parseFloat(cities.get(j)[2]));
                     // Haversine formula
                     double dlon = longStops - longCity;
                     double dlat = latStops - latCity;
@@ -198,7 +198,6 @@ public class Main {
                         min=distance;
                         indexStops=j;
                     }
-                }
             }
             return indexStops;
     }
