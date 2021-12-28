@@ -94,7 +94,7 @@ public class Main {
         for (int i = 1; i < stops.size(); i++) {
             if (stops.get(i)[0].contains("StopArea")) {
                 var area = StopArea.createIndividual
-                        (baseUri + (stops.get(i)[0] + "_" + stops.get(i)[1]).replace(" ", ""));
+                        (baseUri + (stops.get(i)[0]).replace(" ",""));
                 area.addProperty(stopId, stops.get(i)[0].substring(stops.get(i)[0].lastIndexOf(":") + 1));
                 area.addProperty(stopsName, stops.get(i)[1]);
                 if (stops.get(i)[2].equals("")) {
@@ -105,9 +105,16 @@ public class Main {
                     model.add(area, stopsLong, ResourceFactory.createTypedLiteral(stops.get(i)[3], XSDDatatype.XSDfloat));
                 }
                 for (int j = i + 1; j < stops.size(); j++) {
+                    Individual point ;
                     if (stops.get(j)[0].contains("StopPoint")) {
-                        var point = StopPoints.createIndividual
-                                (baseUri + (stops.get(j)[0] + "_" + stops.get(j)[1]).replace(" ", ""));
+                        if(stops.get(j)[0].contains("Train")) {
+                             point = StopPointsByTrain.createIndividual
+                                    (baseUri + (stops.get(j)[0]).replace(" ", "-"));
+                        }
+                        else {
+                            point = StopPointsByOther.createIndividual
+                                    (baseUri + (stops.get(j)[0]).replace(" ", "-"));
+                        }
                         point.addProperty(stopId, stops.get(j)[0].substring(stops.get(j)[0].lastIndexOf(":") + 1));
                         point.addProperty(stopsName, stops.get(j)[1]);
                         if (stops.get(i)[2].equals("")) {
