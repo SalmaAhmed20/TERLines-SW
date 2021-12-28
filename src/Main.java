@@ -32,6 +32,8 @@ public class Main {
         OntClass Stops = model.createClass(baseUri + "Stops");
         OntClass StopArea = model.createClass(baseUri + "StopArea");
         OntClass StopPoints = model.createClass(baseUri + "StopPoints");
+        model.add(StopArea, RDFS.subClassOf, Stops);
+        model.add(StopPoints, RDFS.subClassOf, Stops);
         OntClass StopPointsByTrain = model.createClass(baseUri + "StopPointsByTrain");
         OntClass StopPointsByOther = model.createClass(baseUri + "StopPointsByOther");
         model.add(StopPointsByTrain, RDFS.subClassOf, StopPoints);
