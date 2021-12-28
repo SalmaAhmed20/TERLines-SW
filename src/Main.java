@@ -51,6 +51,35 @@ public class Main {
         ObjectProperty isParentStation = model.createObjectProperty(baseUri + "isParentStation");
         isParentStation.addDomain(StopArea);
         isParentStation.addRange(StopPoints);
+        //---------Trips---------
+        OntClass Trips = model.createClass(baseUri + "Trips");
+        //----- Data Property of Trips ---
+        DatatypeProperty routeId = model.createDatatypeProperty(baseUri + "routeId");
+        routeId.addDomain(Trips);
+        routeId.addRange(XSD.xstring);
+        DatatypeProperty tripId = model.createDatatypeProperty(baseUri + "tripId");
+        tripId.addDomain(Trips);
+        tripId.addRange(XSD.xstring);
+        //---------Routes---------
+        OntClass Routes = model.createClass(baseUri + "Routes");
+        //----- Data Property of Routes ---
+        DatatypeProperty RouteId = model.createDatatypeProperty(baseUri + "RouteId");
+        RouteId.addDomain(Routes);
+        RouteId.addRange(XSD.xstring);
+        DatatypeProperty agencyId = model.createDatatypeProperty(baseUri + "agencyId");
+        agencyId.addDomain(Routes);
+        agencyId.addRange(XSD.xstring);
+        DatatypeProperty routeShortName = model.createDatatypeProperty(baseUri + "routeShortName");
+        routeShortName.addDomain(Routes);
+        routeShortName.addRange(XSD.xstring);
+        DatatypeProperty routeLongtName = model.createDatatypeProperty(baseUri + "routeLongtName");
+        routeLongtName.addDomain(Routes);
+        routeLongtName.addRange(XSD.xstring);
+        //----ObjectProperty-----
+        ObjectProperty hasRoutes = model.createObjectProperty(baseUri + "hasRoutes");
+        hasRoutes.addDomain(Trips);
+        hasRoutes.addRange(Routes);
+        //----------individual of city---------
         var cities = readFile("Dataset/cities.csv");
         for (int i = 1; i < cities.size(); i++) {
             var individual = City.createIndividual(baseUri + cities.get(i)[0].substring(cities.get(i)[0].lastIndexOf('/') + 1));
@@ -58,6 +87,7 @@ public class Main {
             model.add(individual, latitude, ResourceFactory.createTypedLiteral(cities.get(i)[1], XSDDatatype.XSDfloat));
             model.add(individual, longitude, ResourceFactory.createTypedLiteral(cities.get(i)[2], XSDDatatype.XSDfloat));
         }
+        //----------individual of stops---------
         var stops = readFile("Dataset/stops.txt");
         for (int i = 1; i < stops.size(); i++) {
             if (stops.get(i)[0].contains("StopArea")) {
