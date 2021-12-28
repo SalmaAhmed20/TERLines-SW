@@ -34,8 +34,7 @@ WHERE {
   ?y uri:routeLongtName ?route.
   ?z rdf:type uri:StopPointsByTrain.
   ?z uri:stopId ?train.
-  ?a uri:isParentStation ?z.
-  ?a uri:stopsName ?stops }
+  ?z uri:stopsName ?stops }
   -----------------------------------------------------------
 c.
 SELECT ?stopArea ?stopPoint
