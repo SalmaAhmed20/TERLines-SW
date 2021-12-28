@@ -53,6 +53,9 @@ public class Main {
         ObjectProperty isParentStation = model.createObjectProperty(baseUri + "isParentStation");
         isParentStation.addDomain(StopArea);
         isParentStation.addRange(StopPoints);
+        ObjectProperty CloserTo = model.createObjectProperty(baseUri + "CloserTo");
+        CloserTo.addDomain(City);
+        CloserTo.addRange(Stops);
         //---------Trips---------
         OntClass Trips = model.createClass(baseUri + "Trips");
         //----- Data Property of Trips ---
@@ -83,18 +86,20 @@ public class Main {
         hasRoute.addRange(Routes);
         //----------individual of city---------
         var cities = readFile("Dataset/cities.csv");
+        var stops = readFile("Dataset/stops.txt");
         for (int i = 1; i < cities.size(); i++) {
             var individual = City.createIndividual(baseUri + cities.get(i)[0].substring(cities.get(i)[0].lastIndexOf('/') + 1));
             individual.addProperty(cityName, cities.get(i)[0]);
             model.add(individual, latitude, ResourceFactory.createTypedLiteral(cities.get(i)[1], XSDDatatype.XSDfloat));
             model.add(individual, longitude, ResourceFactory.createTypedLiteral(cities.get(i)[2], XSDDatatype.XSDfloat));
+            int closer=get_Closer( cities,i,stops);
+            var StopsArea=StopArea.createIndividual(baseUri  + (stops.get(closer)[0]).replace(" ",""));
+            individual.addProperty(CloserTo,StopsArea);
         }
         //----------individual of stops---------
-        var stops = readFile("Dataset/stops.txt");
         for (int i = 1; i < stops.size(); i++) {
             if (stops.get(i)[0].contains("StopArea")) {
-                var area = StopArea.createIndividual
-                        (baseUri + (stops.get(i)[0]).replace(" ",""));
+                var area = StopArea.createIndividual(baseUri + (stops.get(i)[0]).replace(" ",""));
                 area.addProperty(stopId, stops.get(i)[0].substring(stops.get(i)[0].lastIndexOf(":") + 1));
                 area.addProperty(stopsName, stops.get(i)[1]);
                 if (stops.get(i)[2].equals("")) {
@@ -131,6 +136,7 @@ public class Main {
                 }
             }
         }
+
         var routes = readFile("Dataset/routes.txt");
         for (int i = 1; i <= routes.size() - 1; i++) {
             var route = Routes.createIndividual(baseUri + routes.get(i)[0]);
@@ -166,5 +172,34 @@ public class Main {
             Row.add(columns);
         }
         return Row;
+    }
+    static public int get_Closer(Vector<String[]> cities,int idx,Vector<String[]> stops) {
+        double min=Double.POSITIVE_INFINITY;
+        int indexStops=-1;
+            double latCity=Math.toRadians(Float.parseFloat(cities.get(idx)[1]));
+            double longCity=Math.toRadians(Float.parseFloat(cities.get(idx)[2]));
+            for (int j = 1; j < stops.size(); j++) {
+                if (stops.get(j)[0].contains("StopArea")) {
+                    double latStops = Math.toRadians(Float.parseFloat(stops.get(j)[3]));
+                    double longStops = Math.toRadians(Float.parseFloat(stops.get(j)[4]));
+                    // Haversine formula
+                    double dlon = longStops - longCity;
+                    double dlat = latStops - latCity;
+                    double a = Math.pow(Math.sin(dlat / 2), 2)
+                            + Math.cos(latCity) * Math.cos(latStops)
+                            * Math.pow(Math.sin(dlon / 2), 2);
+                    double c = 2 * Math.asin(Math.sqrt(a));
+                    // Radius of earth in kilometers. Use 3956
+                    // for miles
+                    double r = 6371;
+                    double distance = c * r;
+                    System.out.println( "distanse:- "+ distance);
+                    if (distance < min) {
+                        min=distance;
+                        indexStops=j;
+                    }
+                }
+            }
+            return indexStops;
     }
 }
